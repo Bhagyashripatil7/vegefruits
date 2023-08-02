@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import register,signin,signout,about,contact,blog
-from .views import place_order
+from .views import register,signin,signout,about,contact,blog,home,order,payment
+from feedback.views import feedback
+from statements.views import statement
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,11 +28,16 @@ urlpatterns = [
     path('signin/',signin,name="signin"),
     path('logout/',signout,name="logout"),
     path('about/',about,name="about"),
+    path('home/',home,name="home"),
     path('contact/',contact,name="contact"),
     path('blog/',blog,name="blog"),
     path('',include('shop.urls')),
     path('',include('cart.urls')),
-
-    path('cart/placeorder/', place_order, name='place_order'),
+    path('order/', order, name="order"),
+    path('', include('feedback.urls')),
+    path('feedback/', feedback, name="feedback"),
+    path('', include('statements.urls')),
+    path('statement/', statement, name="statement"),
+    path('payment/', payment, name='payment'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

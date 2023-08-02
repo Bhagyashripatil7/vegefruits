@@ -31,11 +31,17 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect("/signin")
+def home(request):
+    return render(request,"base.html")
 def about(request):
     return render(request,"about.html")
+
 def contact(request):
     return render(request,"contact.html")
 def blog(request):
     return render(request,"blog.html")
-def place_order(request):
-    return render(request,"place_order.html")
+def payment(request):
+    return render(request,'payment.html')
+def order(request):
+    return render(request,'orderdone.html')
+

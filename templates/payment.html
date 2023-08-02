@@ -40,14 +40,14 @@
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
+						    <span class="text">+91 8090123070</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">bhartidutta.3ri@gmail.com</span>
+						    <span class="text">GoFresh123@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">12 hours delivery &amp; Free Returns</span>
+						    <span class="text">24*7 hours delivery &amp; Free Returns</span>
 					    </div>
 
 				    </div>
@@ -56,8 +56,52 @@
 		  </div>
     </div>
 <br>
-  <div style="margin-left:500px;height:400px;width:600px;background-color:#e6faff; margin-top:50px;"><br>
+  <div style="margin-left:500px;height:1000px;width:600px;background-color:#e6faff; margin-top:50px;"><br>
+
   <h2 style="margin-left:250px;"><I>Payment Details</I></h2>
+       <form method="post" class="bg-white p-5 contact-form" action="{% url 'order' %}">
+                {% csrf_token %}
+              <div class="form-group">
+                  <label for="name">Username</label>
+                <input name="name" type="text" class="form-control" value="{{user}}" readonly>
+              </div>
+              <div class="form-group">
+                   <label for="email">Email</label>
+                <input name="email" type="text" class="form-control" placeholder="Email-ID" required>
+              </div>
+              <div class="form-group">
+                   <label for="phone">Phone No.</label>
+                <input name="phone" type="text" class="form-control" placeholder="Mobile No." required>
+              </div>
+              <div class="form-group">
+                   <label for="address">Address</label>
+                  <input name="address" type="text" class="form-control" placeholder="Address" required>
+              </div>
+              <div class="form-group">
+                   <label for="total">Total Amount</label>
+                <input name="total" type="text" class="form-control" placeholder="Total Amount" required>
+              </div>
+              <div class="form-group">
+                   <label for="items">Items</label>
+                <input name="items" type="text" class="form-control" placeholder="Items" required>
+              </div>
+              <div>
+                  <tr>
+                      <td><label for="mode">Mode of Payment : </label></td>
+                      <td>
+                          <input type="radio" name="mode" value="cod" required> Cash On Delivery
+                          <br>
+                          <input type="radio" name="mode" value="cards" required> Debit/Credit Card
+                      </td>
+                  </tr>
+              </div>
+           <a href="{% url 'contact' %}" class="btn btn-primary btn-block"> Feedback is needed by You </a>
+           <br>
+           <div class="form-group">
+                <input type="submit" value="Place Order" class="btn btn-primary py-3 px-5">
+              </div>
+       </form>
+  </div>
 
   </div>
 
@@ -67,8 +111,6 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Vegefoods</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -109,9 +151,9 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Kokane chowk,rahatni road,pimple Saudagar, Pimpri Chinchwad, Pune, Maharashtra, India</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 8090123070</span></a></li>
+
 	              </ul>
 	            </div>
             </div>
